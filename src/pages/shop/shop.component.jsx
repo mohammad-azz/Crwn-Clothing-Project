@@ -1,12 +1,13 @@
 import React from "react";
 import SHOP_DATA from "./shop.data";
+import CollectionPreview from  '../../componens/collection-preview/collection-preview.component'
 class ShopPage extends React.Component{
     constructor(prop){
         super(prop);
         this.state={
              collections:SHOP_DATA
         };
-    }
+    } 
     componentDidMount() {
         fetch("http://localhost:5000/api/ProductsViews")
           .then(res => res.json())
@@ -29,7 +30,12 @@ class ShopPage extends React.Component{
           )
       }
     render(){
-        return <div>SHOP PAGE</div>
+        const {collections} = this.state;
+        return( <div className="shop-page">{
+            collections.map(({id,...otherCollectionProps})=> (
+                <CollectionPreview key={id} otherCollectionProps></CollectionPreview>
+            ))
+            }</div>)
     }
 }
 export default ShopPage;
