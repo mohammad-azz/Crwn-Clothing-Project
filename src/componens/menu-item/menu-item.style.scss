@@ -8,10 +8,10 @@
     border: 1px solid black;
     margin: 0 7.5px 15px;
     overflow: hidden;
-&:hover{
-  cursor: pointer;
-  .content{
-    opacity: 0.9;
+  &:hover{
+    cursor: pointer;
+    .content{
+       opacity: 0.9;
 
   }
   .background-image{
