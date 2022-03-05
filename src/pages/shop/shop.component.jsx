@@ -6,9 +6,9 @@ class ShopPage extends React.Component{
         this.state={
              collections:[]
         };
-    } 
+    }
     componentDidMount() {
-        fetch("http://localhost:8010/proxy/api/ProductsViews" ,{mode: 'cors',method: 'GET'})
+        fetch("/api/ProductsViews" ,{mode: 'no-cors',method: 'GET'})
           .then(result => result.json()).then(shopdata => this.setState({collections:shopdata}));
       }
     render(){

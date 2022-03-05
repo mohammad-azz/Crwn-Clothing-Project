@@ -1,16 +1,18 @@
 import React from "react";
 import './form-input.style.scss';
 
-const FormInput=({handleChange,lable,...OtherProps})=>
+const FormInput=({handleChange,label,...OtherProps})=>
 (
     <div className="group">
 
         <input className="form-input" 
-        onChange={handleChange}
-        {...OtherProps}/>
+        onChange={handleChange}{...OtherProps}/>
        {
-           lable ?
-           (<lable className={`${OtherProps.value.lenght}`}/>)
+           label ?
+           (<label className={`${OtherProps.value.lenght ? 'shrink' : ''} form-input-label`}>
+              {label}
+               </label>
+               )
            :null
        }
     </div>
